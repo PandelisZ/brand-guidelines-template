@@ -1,0 +1,66 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8  
+//if IE 8
+  html.no-js.lt-ie9 
+// [if gt IE 8] <!
+block vars
+html.no-js
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title #{longName} | Style Guide
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    link(rel='stylesheet', href='css/main.css')
+    style.
+      .small-link {
+      font-size: 16px;
+      line-height: 1;
+      }
+      header#pageHeader, header#pageHeader nav, footer#pageFooter {
+      background: #{headerBackgroundColor}
+      }
+      a {
+      color: #{linkColor}
+      }
+      a:hover {
+      color: #{linkColorHover}
+      }
+      header#pageHeader nav ul li a:hover {
+      color: #{linkColor}
+      }
+      ::-moz-selection {
+      background-color: #{linkColor}
+      }
+      ::selection {
+      background-color: #{linkColor}
+      }
+    script(src='js/vendor/modernizr-2.6.2.min.js')
+    script(src='js/vendor/conditionizr.min.js')
+  body
+    //if lt IE 7
+      p.browsehappy
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    a#top
+    article#wrapper
+    include header/page-header.jade
+    block content
+    include footer/page-footer.jade
+
+    
+        
+    //-scrpts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\\/script>')
+    script(src='js/vendor/jquery.velocity.min.js')
+    script(src='js/main.js')

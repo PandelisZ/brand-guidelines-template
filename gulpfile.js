@@ -36,7 +36,7 @@ gulp.task('sass', function() {
           errLogToConsole: true
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./src/css'))
+        .pipe(gulp.dest('./src/css/'))
         .pipe(browserSync.reload({
           stream: true
         }));
@@ -106,7 +106,7 @@ gulp.task('watch-html', function() {
 
 // Default functionality includes server with browser sync and watching
 gulp.task('default', ['serve', 'sass'], function(){
-  gulp.watch('./src/jade/*.jade', ['jade']);
+  gulp.watch('./src/jade/**/*.jade', ['jade']);
   gulp.watch('./src/scss/**/*.scss', ['sass']);
   gulp.watch('./src/js/**/*.js', ['watch-js']);
   gulp.watch('./src/**/*.html', ['watch-html']);

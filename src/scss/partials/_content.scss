@@ -159,13 +159,13 @@ section {
     }
 
     .group {
-      @include span(90% nest);
+      //@include span(90% nest);
       max-width: 900px;
       margin: 0 auto 20px;
       float: none;
 
       @include media-query(mobile) {
-        @include span(100% nest);
+        //@include span(100% nest);
         margin: 0 auto 20px;
         float: none;
       }

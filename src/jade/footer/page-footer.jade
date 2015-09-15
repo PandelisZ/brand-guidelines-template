@@ -2,9 +2,12 @@
 
 footer#pageFooter
   p
-    | All logos and brand assets are © Copyright USRBC and may only be used with permission. All rights reserved.
+    | All logos and brand assets are © Copyright 
+    script(type='text/javascript').
+      document.write(new Date().getFullYear())
+    #{shortName} and may only be used with permission. All rights reserved.
   p
-    | The USRBC word mark is a ® registered trademark with the US Patent and Trademark office.
+    | The #{shortName} word mark is a ® registered trademark with the US Patent and Trademark office.
   p
     a.logo(href='http://ripe.com', target='_blank')
     | Brand designed and developed by 
