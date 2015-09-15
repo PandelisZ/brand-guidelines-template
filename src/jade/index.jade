@@ -1,0 +1,55 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8  
+//if IE 8
+  html.no-js.lt-ie9  
+// [if gt IE 8] <!
+html.no-js
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title U.S.-Russia Business Council Style Guide
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    link(rel='stylesheet', href='css/main.css')
+    style.
+      .small-link {
+      font-size: 16px;
+      line-height: 1;
+      }
+    script(src='js/vendor/modernizr-2.6.2.min.js')
+    script(src='js/vendor/conditionizr.min.js')
+  body
+    //if lt IE 7
+      p.browsehappy
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    a#top
+    article#wrapper
+      // START: Page-header
+      include header/page-header.jade
+      
+      // START: Logo
+      include content/01-logo.jade
+      // START: Logo Configurations
+      include content/02-logo-configuration.jade
+      // START: Color
+      include content/03-color.jade
+      // START: Typography
+      include content/04-typography.jade
+      // START: Email Signiture
+      include content/05-email-signiture.jade
+      // START: Stationery Package
+      include content/06-stationery-package.jade
+      // START: Footer
+      include footer/page-footer.jade
+
+      //START: Footer Scripts
+      include footer/footer-scripts.jade
