@@ -1,4 +1,4 @@
-extends layout.jade
+extends bin/jade/layout.jade
 
 //- Call variables in your content like this: #{longName} 
 block vars
@@ -12,7 +12,7 @@ block vars
   - var linkColorHover = '#2A71B7'
   
 block navigation
-  include header/navigation.jade
+  include content/00-navigation.jade
 
 block content
   // START: Logo
