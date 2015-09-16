@@ -1,4 +1,12 @@
 # Brand Guidelines template
+1. [About](#)
+2. [Installation Instructions](#)
+3. [Structure / Organization](#)
+4. [How to Update](#)
+5. [Requirements](#)
+6. [How to deliver](#)
+
+## About
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client.  At the bare mimumum all Brand Guidelines must have:
 - Logo
 - Logo Configurations
