@@ -6,15 +6,10 @@
 5. [Requirements](#)
 6. [How to deliver](#)
 
-## About
-This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client.  At the bare mimumum all Brand Guidelines must have:
-- Logo
-- Logo Configurations
-- Color Palette
-- Typography
-- Email Signature
+# About
+This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
 
-## Installation Instructions
+# Installation Instructions
 
 ### Step 1. Install Dependencies
 Node 
@@ -27,7 +22,7 @@ Sublime Text 3 w/ Jade + package installer
 3. Open terminal, navigate and "sudo npm install"
 4. Run "gulp", you'll see it working!
 
-## About the Structure
+# Structure / Organization
 You only need to edit the "src" folder. This stands for "source".  The structure is:
 ```
 bin/
@@ -55,6 +50,16 @@ There are the folders:
 ## Add brand files
 
 ## Update guidelines
+
+#Requirements
+At the bare mimumum all Brand Guidelines must have:
+- Logo
+- Logo Configurations
+- Color Palette
+- Typography
+- Email Signature
+
+#How to deliver
 
 
 
