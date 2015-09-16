@@ -1,1 +1,1 @@
-# Ripe's brand style guide template
+# Brand Guidelines template
