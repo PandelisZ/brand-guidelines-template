@@ -1,7 +1,7 @@
 {
-  "name": "brand-style-guide-template",
+  "name": "brand-guidelines-template",
   "version": "1.0.0",
-  "description": "ripe's brand style guid",
+  "description": "template for a brand guidelines site",
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.9.3",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ripestudios/brand-style-guide-template.git"
+    "url": "git+https://github.com/ripestudios/brand-guidelines-template.git"
   },
   "keywords": [
     "gulp",
@@ -38,7 +38,7 @@
   "author": "ripe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ripestudios/brand-style-guide-template/issues"
+    "url": "https://github.com/ripestudios/brand-guidelines-template/issues"
   },
-  "homepage": "https://github.com/ripestudios/brand-style-guide-template#readme"
+  "homepage": "https://github.com/ripestudios/brand-guidelines-template#readme"
 }
