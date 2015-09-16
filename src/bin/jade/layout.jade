@@ -31,6 +31,12 @@ html.no-js
       a:hover {
       color: #{linkColorHover}
       }
+      .nav-link.active {
+      color: #{headerBackgroundColor} !important
+      }
+      .top:hover{
+      background-color: #{headerBackgroundColor} !important
+      }
       header#pageHeader nav ul li a:hover {
       color: #{linkColor}
       }
@@ -40,8 +46,8 @@ html.no-js
       ::selection {
       background-color: #{linkColor}
       }
-    script(src='js/vendor/modernizr-2.6.2.min.js')
-    script(src='js/vendor/conditionizr.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js')
   body
     //if lt IE 7
       p.browsehappy
@@ -50,7 +56,7 @@ html.no-js
         |  browser. Please 
         a(href='http://browsehappy.com/') upgrade your browser
         |  to improve your experience.
-    a#top
+    a#top.container
     article#wrapper
     include page-header.jade
     block content
@@ -62,5 +68,5 @@ html.no-js
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script.
       window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\\/script>')
-    script(src='js/vendor/jquery.velocity.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js')
     script(src='js/main.js')

@@ -90,6 +90,11 @@ header#pageHeader {
             background: $white;
             color: $brandColor;
           }
+
+          &.active{
+             background: $white;
+             //color: $brandColor;
+          }
         }
       }
     }

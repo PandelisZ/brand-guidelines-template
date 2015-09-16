@@ -1,18 +1,22 @@
-var gulp = require('gulp'),
+var gulp        = require('gulp'),
 
     // Server and sync
     browserSync = require('browser-sync'),
 
     // Other plugins
-    rimraf = require('rimraf'),
-    es = require('event-stream'),
-    sass = require('gulp-sass'),
-    jade = require('gulp-jade'),
-    sourcemaps = require('gulp-sourcemaps'),
-    minify = require('gulp-minify-css'),
-    uglify = require('gulp-uglify'),
-    fs = require('fs.extra');
+    rimraf      = require('rimraf'),
+    es          = require('event-stream'),
+    sass        = require('gulp-sass'),
+    jade        = require('gulp-jade'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    minify      = require('gulp-minify-css'),
+    uglify      = require('gulp-uglify'),
+    fs          = require('fs.extra'),
+    browserify  = require('browserify'),
+    transform   = require('vinyl-transform'),
+    source      = require('vinyl-source-stream');
     
+
 
 
 
@@ -94,32 +98,30 @@ gulp.task('minify', ['sass'], function() {
 
 
 //
+// Browserify@
+// (Not working yet!)
+//
+gulp.task('browserify', function() {
+    return browserify('./bin/src/js/main.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('main.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./dist/js/'));
+});
+
+//
 // Uglify js
 //
 gulp.task('scripts', function() {
     return gulp.src('./src/bin/js/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(browserSync.reload({
+          stream: true,
+          once: true
+        }));
 });
-
-
-//
-// Vendor JS
-//
-gulp.task('vendor-scripts', function() {
-  fs.rmrf('./dist/js/vendor', function (err) {
-    if (err) {
-      console.error(err);
-    }
-  });
-  fs.copyRecursive('./src/bin/js/vendor', './dist/js/vendor', function (err) {
-    if (err) {
-      throw err;
-    }
-    console.log("Replaced vendor JS");
-  });
-});
-
 
 //
 // Watching files for changes before reloading
@@ -132,22 +134,13 @@ gulp.task('watch-js', function() {
       }));
 });
 
-gulp.task('watch-html', function() {
-  gulp.src('./dist/*.html')
-      .pipe(browserSync.reload({
-        stream: true,
-        once: true
-      }));
-});
 
 // Default functionality includes server with browser sync and watching
-gulp.task('default', ['move-brand-files', 'sass', 'scripts', 'vendor-scripts', 'jade', 'serve', ], function(){
+gulp.task('default', ['move-brand-files', 'sass', 'scripts', 'jade', 'serve'], function(){
   gulp.watch(['./src/index.jade', './src/content/*.jade', './src/bin/jade/*.jade'], ['jade']);
   gulp.watch('./src/bin/scss/**/*.scss', ['sass']);
-  gulp.watch('./src/bin/js/**/*.js', ['watch-js']);
-  gulp.watch('./src/bin/js/vendor/*.js', ['vendor-scripts']);
+  gulp.watch('./src/bin/js/**/*.js', ['scripts']);
   gulp.watch(['./src/brand-files/**/*','./src/brand-files/*'], ['move-brand-files']);
-  gulp.watch('./dist/*.html', ['watch-html']);
 });
 
 // Build functionality with cleaning, moving, compiling, etc.
