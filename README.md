@@ -13,7 +13,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
 - Color Palette
 - Typography
 - Email Signature
-- 
+
 ## Installation Instructions
 
 ### Step 1. Install Dependencies
