@@ -11,13 +11,7 @@ var gulp        = require('gulp'),
     sourcemaps  = require('gulp-sourcemaps'),
     minify      = require('gulp-minify-css'),
     uglify      = require('gulp-uglify'),
-    fs          = require('fs.extra'),
-    browserify  = require('browserify'),
-    transform   = require('vinyl-transform'),
-    source      = require('vinyl-source-stream');
-    
-
-
+    fs          = require('fs.extra');
 
 
 // Server initiation and livereload, opens server in browser
@@ -62,6 +56,20 @@ gulp.task('jade', function() {
 });
 
 //
+// Compile Email Signature
+//
+gulp.task('create-email-signature', function() {
+  gulp.src('./src/bin/jade/email-signature.jade')
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./src/brand-files/email-signature/'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
+//
 // Move Brand files into dist
 //
 gulp.task('move-brand-files', function(){
@@ -98,19 +106,6 @@ gulp.task('minify', ['sass'], function() {
 
 
 //
-// Browserify@
-// (Not working yet!)
-//
-gulp.task('browserify', function() {
-    return browserify('./bin/src/js/main.js')
-        .bundle()
-        //Pass desired output filename to vinyl-source-stream
-        .pipe(source('main.js'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest('./dist/js/'));
-});
-
-//
 // Uglify js
 //
 gulp.task('scripts', function() {
@@ -134,16 +129,20 @@ gulp.task('watch-js', function() {
       }));
 });
 
-
+//
 // Default functionality includes server with browser sync and watching
-gulp.task('default', ['move-brand-files', 'sass', 'scripts', 'jade', 'serve'], function(){
-  gulp.watch(['./src/index.jade', './src/content/*.jade', './src/bin/jade/*.jade'], ['jade']);
+//
+gulp.task('default', ['create-email-signature', 'move-brand-files', 'sass', 'scripts', 'jade', 'serve'], function(){
+  gulp.watch(['./src/index.jade', './src/guidelines/*.jade', './src/bin/jade/*.jade'], ['jade']);
   gulp.watch('./src/bin/scss/**/*.scss', ['sass']);
+  gulp.watch('./src/brand-files/email-signature/email-signature.jade', ['create-email-signature']);
   gulp.watch('./src/bin/js/**/*.js', ['scripts']);
   gulp.watch(['./src/brand-files/**/*','./src/brand-files/*'], ['move-brand-files']);
 });
 
+//
 // Build functionality with cleaning, moving, compiling, etc.
+//
 gulp.task('build', ['remove'], function(){
   return gulp.start(
     'minify',

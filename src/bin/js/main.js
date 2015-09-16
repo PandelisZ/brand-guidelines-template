@@ -162,24 +162,7 @@ var sg = (function($) {
 			responsiveState: responsiveState
 		}
 	})();
-	/* 
-		UI Modifications 
 
-		Various functions which operate on elements to achieve visual
-		effects that are impossible to create with CSS alone.
-	*/
-
-	var uiMod = (function() {
-
-		var heightMatcher = function() { // Matches the height of various elements to other elements in ways that are impossible with CSS alone
-			
-		};
-
-		// public
-		return {
-			heightMatcher: heightMatcher
-		};
-	})(); // var uiMod = (function() {
 
 
 	/* 
@@ -243,34 +226,12 @@ var sg = (function($) {
 	})(); // var stickyNav = (function() {
 
 
-
-	/* 
-		User interaction 
-
-		Various functions which are called when the user intearcts
-		with a piece of the site (eg. clicking, scrolling, etc)
-	*/
-	var userInput = (function() {
-
-		var example = function() { // Matches the height of various elements to other elements in ways that are impossible with CSS alone
-			
-		};
-
-		// public
-		return {
-			example: example
-		};
-
-	})(); // var uiMod = (function() {
-
 	
 
 	// public
 	return {
 		utility: utility,
 		stickyNav: stickyNav,
-		uiMod: uiMod,
-		userInput: userInput
 	};
 })(jQuery); // var cs = (function() {
 
@@ -294,51 +255,50 @@ var scrollspy = (function(){
   var $stickyWrapper      = $('#js-sticky-wrapper');
   var $scrollSpyLink      = $('.nav-link');
 
-
-
   //
   // Initialize our methods
   // Event handlers
   //
   function init () {
-  	console.log('dsdf');
     // Create an object containing our nav targets
     contentInventory(contentBlocksClass);
-
-    // Link click handler
-    /*$scrollSpyLink.click(function(e){
-      e.preventDefault();
-      scrollToSection($(this));
-    });*/
 
     // Scroll event handler
     $(window).scroll(function() { 
       throttle(setActiveNav(), 300 );
-       throttle(sg.stickyNav.init(), 300 );
-      
+      throttle(sg.stickyNav.init(), 300 );
     });
 
+    // Link handler
+    // any link on this page (href="#*")
+    $("a[href*=#]").click(function(e) {
+    	e.preventDefault();
+    	if ($(window).width() >= 826) { // If we're at sticky nav dimensions, offest should include nav height.
+    		smoothScroll($(this), - $('nav').outerHeight());
+    	}
+    	else { 
+    		smoothScroll($(this),-40);
+    	}
+    });
   }  
 
-	  function throttle (callback, limit) {
-	  var wait = false;                 // Initially, we're not waiting
-	  return function () {              // We return a throttled function
-	    if (!wait) {                  // If we're not waiting
-	      callback.call();          // Execute users function
-	      wait = true;              // Prevent future invocations
-	      setTimeout(function () {  // After a period of time
-	          wait = false;         // And allow future invocations
-	      }, limit);
-	    }
-	  }
-	}
-
+  function throttle (callback, limit) {
+    var wait = false;                 // Initially, we're not waiting
+    return function () {              // We return a throttled function
+      if (!wait) {                  // If we're not waiting
+        callback.call();          // Execute users function
+        wait = true;              // Prevent future invocations
+        setTimeout(function () {  // After a period of time
+            wait = false;         // And allow future invocations
+        }, limit);
+      }
+    }
+  }
 
   //
   // Stick the nav when user scrolls passed
   // 
   function contentInventory (className) {
-   
     var contentSectionElements = document.getElementsByClassName(className); //sections with "main parent" are the top-level nav.  They may have children
     for (var i = contentSectionElements.length - 1; i >= 0; i--) {
       //  
@@ -346,9 +306,7 @@ var scrollspy = (function(){
           id: contentSectionElements[i].id, 
           percentVisible: 0, 
       });
-
-    };
-    
+    };  
     return contentSections;
   }
 
@@ -425,10 +383,9 @@ var scrollspy = (function(){
   }
 
   //
-  //
+  // set active nav
   //
   function setActiveNav () {
-    
     var navArr = contentSections;
     var currentSection;
 
@@ -438,7 +395,7 @@ var scrollspy = (function(){
       return parseFloat(b.percentVisible) - parseFloat(a.percentVisible)
     });
  
-    console.log(isAnimating);
+    //console.log(isAnimating);
     if ((currentSection != navArr[0].id) && (isAnimating === false)) {  
       $scrollSpyLink.removeClass('active');
       $('.nav-link[href="#' + navArr[0].id + '"').addClass('active');
@@ -452,27 +409,32 @@ var scrollspy = (function(){
     }
   }
 
-  function scrollToSection (el) {
-    target = el.attr('href');
-
+  function smoothScroll (el,o) {
+    // Setup variables
+    var target = el.attr('href');
+    var offset = (function(){
+      if (typeof o != 'undefined') {
+      	return o;
+      }
+      else {
+      	return 0;
+      }
+    })();
+    // Perform scroll
     $(target).velocity("scroll", { 
-      duration: 750, 
-      easing: "ease-out", 
-      offset: -10,
-      begin: function() {
-        console.log('animation begin');
-        isAnimating = true;
-        co
+      duration: 500,
+      offset: offset,
+      easing: "easeInOutQuart",
+      begin: function() { 
+         //console.log('animation begin');
+      	isAnimating = true;
       },
-      complete: function() {
-        isAnimating = false;
+      complete: function() { 
+      	isAnimating = false;
         setActiveNav();
       }
-    });
-
-    return isAnimating;
-
-  }
+    }); 
+  };
   
   return {
     init: init,
