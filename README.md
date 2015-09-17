@@ -1,10 +1,11 @@
 # Brand Guidelines template
 1. [About](#about)
-2. [Start a new brand guidelines](#)
-3. [Structure / Organization](#)
-4. [How to Update](#)
-5. [Requirements](#)
-6. [How to deliver](#)
+2. [Start a new brand guidelines](#start-a-new-brand-guidelines)
+3. [First time set up](#first-time-set-up-instructions)
+4. [Structure / Organization](#structure--organization)
+5. [How to Update](#)
+6. [Requirements](#)
+7. [How to deliver](#)
 
 # About
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
@@ -55,7 +56,7 @@ Use the Sublime Text package control to add JADE:
 Now you're ready to go!! Proceed to the [Start a new guidelines] section
 
 # Structure / Organization
-You only need to edit the "src" folder. This stands for "source".  The structure is:
+You only need to edit the "build" folder. This stands for "source".  The structure is:
 ```
 app/
 brand-files/
