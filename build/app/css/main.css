@@ -419,6 +419,14 @@ input[type=text], textarea, select, input[type=phone] {
   input[type=text]:focus, textarea:focus, select:focus, input[type=phone]:focus {
     outline: 0; }
 
+input[type=submit] {
+  padding: 10px 25px;
+  background: #111;
+  border: 0;
+  color: #fff; }
+  input[type=submit]:hover {
+    opacity: 80%; }
+
 textarea {
   resize: vertical; }
 
@@ -1134,7 +1142,7 @@ textarea {
 
 /*
 ==========================================================================
-    TYPOGRAPHY (scss/partials/_typography.scss)
+    TYPOGRAPHY 
 ==========================================================================
 */
 h1 {
@@ -1362,7 +1370,7 @@ footer#pageFooter {
       margin-right: 15px;
       display: inline-block;
       vertical-align: middle;
-      background: url(../brand-files/ripe-logo-20x20@2x.png) no-repeat;
+      background: url(../brand-files/z-ripe-logo-20x20@2x.png) no-repeat;
       background-size: 20px 20px; }
 
 /*

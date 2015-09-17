@@ -22,7 +22,27 @@
       line-height: 1;
       }
       header#pageHeader, header#pageHeader nav, footer#pageFooter {
-      background: #111111
+      background: #111111;
+      color: #ffffff;
+      }
+      #pageHeader nav .nav li a {
+      color: #ffffff !important;
+      border-color: #ffffff !important;
+      }
+      #pageHeader nav .nav li a.active {
+      background-color: #ffffff !important;
+      color: #111111 !important;
+      }
+      #pageHeader small, #pageHeader small a {
+      color: #ffffff !important;
+      opacity: .6;
+      }
+      header#pageHeader nav ul li a:hover {
+      color: blue !important;
+      }
+      #pageFooter a {
+      color: #ffffff !important;
+      opacity: .6;
       }
       a {
       color: blue
@@ -35,9 +55,6 @@
       }
       .top:hover{
       background-color: #111111 !important
-      }
-      header#pageHeader nav ul li a:hover {
-      color: blue
       }
       ::-moz-selection {
       background-color: blue
@@ -60,7 +77,7 @@
     --><a id="top" class="container"></a>
     <article id="wrapper"></article>
     <header id="pageHeader">
-      <h1>The Client Name</h1><small>Brand by <a href="http://ripe.com" target="_blank" title="ripe | Brading | Graphic Design | Web Design | Washington DC">ripe</a></small>
+      <h1>The Client Name</h1><small><a href="http://ripe.com" target="_blank" title="ripe | Brading | Graphic Design | Web Design | Washington DC">Brand by ripe</a></small>
       <p>Client Name’s logo is a valuable commodity which has been developed to be used in a specific manner. Consistent use of the mark is necessary from both a branding and legal standpoint.</p>
       <p>Jump to:</p>
       <nav id="main-nav">
@@ -196,10 +213,11 @@ and a <a href="href=&#39;brand-files/how-to-add-email-signature.pdf&#39;">PDF</a
           <h5>Generate Signature</h5>
           <form id="generateEmailSig" action="brand-files/email-signature/email-signature.html" method="GET" target="_blank">
             <input name="name" type="text" placeholder="Your Name">
+            <input name="title" type="text" placeholder="Job Title">
             <input name="company" type="text" placeholder="Company">
             <input name="phone" type="phone" placeholder="Phone Number">
             <input name="url" type="text" placeholder="Website URL">
-            <input name="submit" type="submit" value="Generate Signature">
+            <input type="submit" value="Generate Signature">
           </form>
         </div>
         <div class="col-sm-7"><img src="brand-files/email-signature/email-signature@2x.png" alt="Acceptable Configurations"></div>

@@ -78,10 +78,10 @@ gulp.task('sass', function() {
 gulp.task('optimizeCSS', ['sass'], function() {
   return gulp.src(styleConfig.paths.src)
     .pipe(plumber())
-    .pipe(minifyCSS({
+    .pipe(minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./dist/app/css'));
 });
 
 /* ========================================================================= */
@@ -194,7 +194,7 @@ gulp.task('build', ['remove'], function(){
   return gulp.start(
     'optimizeCSS',
     'optimizeJS',
-    'moveFiles'
+    'move-files'
   );
 });
 

@@ -23,7 +23,27 @@ html.no-js
       line-height: 1;
       }
       header#pageHeader, header#pageHeader nav, footer#pageFooter {
-      background: #{headerBackgroundColor}
+      background: #{headerBackgroundColor};
+      color: #{headerTextColor};
+      }
+      #pageHeader nav .nav li a {
+      color: #{headerTextColor} !important;
+      border-color: #{headerTextColor} !important;
+      }
+      #pageHeader nav .nav li a.active {
+      background-color: #{headerTextColor} !important;
+      color: #{headerBackgroundColor} !important;
+      }
+      #pageHeader small, #pageHeader small a {
+      color: #{headerTextColor} !important;
+      opacity: .6;
+      }
+      header#pageHeader nav ul li a:hover {
+      color: #{linkColor} !important;
+      }
+      #pageFooter a {
+      color: #{headerTextColor} !important;
+      opacity: .6;
       }
       a {
       color: #{linkColor}
@@ -36,9 +56,6 @@ html.no-js
       }
       .top:hover{
       background-color: #{headerBackgroundColor} !important
-      }
-      header#pageHeader nav ul li a:hover {
-      color: #{linkColor}
       }
       ::-moz-selection {
       background-color: #{linkColor}

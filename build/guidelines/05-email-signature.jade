@@ -13,10 +13,11 @@
       h5 Generate Signature
       form(id='generateEmailSig', action='brand-files/email-signature/email-signature.html', method='GET', target='_blank' )
         input(name='name',type='text',placeholder='Your Name')
+        input(name='title',type='text',placeholder='Job Title')
         input(name='company',type='text',placeholder='Company')
         input(name='phone',type='phone',placeholder='Phone Number')
         input(name='url',type='text',placeholder='Website URL')
-        input(name='submit',type='submit',value='Generate Signature')
+        input(type='submit',value='Generate Signature')
 
     .col-sm-7
       img(src='brand-files/email-signature/email-signature@2x.png', alt='Acceptable Configurations')
