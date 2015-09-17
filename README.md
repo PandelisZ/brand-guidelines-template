@@ -3,9 +3,9 @@
 2. [Start a new brand guidelines](#start-a-new-brand-guidelines)
 3. [First time set up](#first-time-set-up-instructions)
 4. [Structure & organization](#structure--organization)
-5. [How to Update](#)
+5. [How to Update](#how-to-update)
 6. [Requirements](#requirements)
-7. [How to deliver](#)
+7. [How to deliver](#how-to-deliver)
 
 # About
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
@@ -99,10 +99,12 @@ At the bare mimumum all Brand Guidelines must have:
 Now that you are done with the brand guidelines, its time to launch!!
 
 #### Step 1 – Build the project for distribution
-Go to the directory for this brand guidelines and run
+In the command line, `cd` to the directory for this brand guidelines and run
    ```
    gulp build
    ```
+This will generate a directory called `dist/` at the project's root level.  This is a folder you can drop right onto any webserver.  **FYI: There are no server-side dependencies**. 
+
 #### Step 2 – Connect to Ripeserver
 Use our FTP credentials in 1password for Ripeserver and login.  Navigate to the `brand` directory within our web files. 
 
