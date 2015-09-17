@@ -9,6 +9,21 @@
 # About
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
 
+# Start a new guidelines doc:
+First Open iTerm and navigate to the directory where you want to store the guidelines, usually like this `cd /htdocs/brand-guidelines`.  Once you're in the directory follow these steps:
+1. Clone repo:
+   ```
+   git clone https://github.com/ripestudios/brand-guidelines-template.git client-name-here
+   ```
+2. Install dependencies:
+   ```
+   sudo npm install
+   ```
+3. Run gulp default task:
+   ```
+   gulp
+   ```
+   
 # Installation Instructions
 
 ### Step 1. Install Dependencies
@@ -60,6 +75,9 @@ At the bare mimumum all Brand Guidelines must have:
 - Email Signature
 
 #How to deliver
+1. Build the project for distrubtion:
+   ```gulp build```
+2. Take the generated directory named `dist` and upload it to Ripeserver via FTP.  The structure should be: http://ripeserver.com/brand/client-name
 
 
 
