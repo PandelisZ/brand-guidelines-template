@@ -11,15 +11,15 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
 
 # Start a new guidelines doc:
 First Open iTerm and navigate to the directory where you want to store the guidelines, usually like this `cd /htdocs/brand-guidelines`.  Once you're in the directory follow these steps:
-1. Clone repo:
+##### Step 1: Clone repo
    ```
    git clone https://github.com/ripestudios/brand-guidelines-template.git client-name-here
    ```
-2. Install dependencies:
+##### Step 2: Install dependencies
    ```
    sudo npm install
    ```
-3. Run gulp default task:
+##### Step 3: Stand up the project
    ```
    gulp
    ```
