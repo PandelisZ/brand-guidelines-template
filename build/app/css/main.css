@@ -1337,6 +1337,9 @@ ul {
 h1:first-of-type:first-child, h2:first-of-type:first-child, h3:first-of-type:first-child, h4:first-of-type:first-child, h5:first-of-type:first-child, h6:first-of-type:first-child {
   margin-top: 0; }
 
+#generateEmailSig input {
+  width: 90%; }
+
 /*
 ==========================================================================
 	FOOTER (scss/partials/_footer.scss)
