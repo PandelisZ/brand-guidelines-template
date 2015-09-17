@@ -54,7 +54,7 @@ Use the Sublime Text package control to add JADE:
 Open iTerm and type each the following commands:
 ```
 sudo mkdir /htdocs
-sudo mkdri /htdocs/brand-guidelines
+sudo mkdir /htdocs/brand-guidelines
 cd /htdocs/brand-guidelines
 ```
 
