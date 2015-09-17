@@ -13,7 +13,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
 *If this is your first time creating a brand guidelines doc, please see 'First Time set up instructions'* 
 
 
-##### Before you begin – Navigate to your working directory
+##### Step 0 – Navigate to your working directory
  Open iTerm and navigate to the directory where you want to store the guidelines, usually like this 
   ``` 
   cd /htdocs/brand-guidelines
