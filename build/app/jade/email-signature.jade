@@ -1,0 +1,36 @@
+//- # Create a combined style strings.  This makes the inline styles way easier to read #}
+  | {% set font_styles = &apos;font-family:&apos;~font_stack~&apos;;font-style&apos;~font_style~&apos;;font-size:&apos;~font_size~&apos;;color:&apos;~text_color %}
+  | {% set font_styles_link = &apos;font-family:&apos;~font_stack~&apos;;font-style&apos;~font_style~&apos;;font-size:&apos;~font_size~&apos;;color:&apos;~link_color~&apos;;text-decoration:none&apos; %}
+  | {#  Your Design goes here! #}
+
+//- Extend the email signature guidelines because that's where
+    the variables are defined!
+include ../../brand-files/email-signature/variables
+
+meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+meta(name='format-detection', content='telephone=no')
+table#sig(width='#{signature_width}', cellspacing='0', cellpadding='0', border-spacing='0', style='#{font_styles};width:#{signature_width}px;margin:0;padding:0;')
+  tr
+    td(style='width:#{signature_width / 2}')
+      table(style='color:#{text_color}')
+        tr(style='cellpadding:0')
+          td(style='#{font_styles};padding-bottom: 7px;')
+            b(style='font-family:#{font_stack};font-size:#{font_size};color:#{text_color}')
+              | #{person_name}
+            if person_title
+              br
+              | #{person_title}
+            if company_name
+              br
+              | #{company_name}
+            br
+            |         
+            a(style='#{font_styles};padding-bottom: 7px;text-decoration:none;', href='tel:#{phone_number_tel}') #{phone_number}
+            br
+            |         
+            a(href='//#{company_url}/', style='#{font_styles_link}') #{company_url}
+    |     
+    td(style='padding:0;padding:0;margin:0')
+      a(href='//#{company_url}/')
+        img(src='#{logo_image_url}', width='#{logo_width}', height='#{logo_height}', style='padding:0;margin:0;')
+
