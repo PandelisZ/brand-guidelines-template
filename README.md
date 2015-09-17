@@ -9,45 +9,64 @@
 # About
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
 
-# Start a new guidelines doc:
-First Open iTerm and navigate to the directory where you want to store the guidelines, usually like this `cd /htdocs/brand-guidelines`.  Once you're in the directory follow these steps:
-##### Step 1: Clone repo
+# Start a new guidelines page:
+*If this is your first time creating a brand guidelines doc, please see 'First Time set up instructions'* 
+
+
+##### Before you begin – Navigate to your working directory
+ Open iTerm and navigate to the directory where you want to store the guidelines, usually like this 
+  ``` 
+  cd /htdocs/brand-guidelines
+  ```
+##### Step 1 – Clone this repository
    ```
    git clone https://github.com/ripestudios/brand-guidelines-template.git client-name-here
    ```
-##### Step 2: Install dependencies
+##### Step 2 – Install dependencies
    ```
    sudo npm install
    ```
-##### Step 3: Stand up the project
+##### Step 3 – Stand up the project
    ```
    gulp
    ```
    
-# Installation Instructions
+# First time set-up instructions 
 
-### Step 1. Install Dependencies
-Node 
-Transmit 
-Sublime Text 3 w/ Jade + package installer
+#### Step 1 – Install the following tools
+- [iTerm](https://www.iterm2.com/)
+- [Sublime Text 3](http://www.sublimetext.com/3)
+- [Sublime Text Package Control](https://packagecontrol.io/installation)
+- [Node](https://nodejs.org/en/)
 
-### Step 2. Setup Template
-1. Github download
-2. Save to directory 
-3. Open terminal, navigate and "sudo npm install"
-4. Run "gulp", you'll see it working!
+#### Step 2 – Install JADE syntax highlighting
+Use the Sublime Text package control to add JADE:
+- Open Sublime Text
+- Call package manager: `cmd + shift + p`
+- Choose `Install Package`
+- Search for `Jade`.  Click to install
+- Confirm by saving a new document as a `.jade` file and check that the bottom right corner says "Jade" and not HTML or Plain Text
+
+#### Step 3 – Create a folder to store all brand guidlines
+- Navigate to your harddrive and create a folder at your root directory.  On a Mac, open the Finder and select *Go -> Home* from your system tray menu or press `Sht + Cmd + H`
+- Create a folder `htdocs` in your Macintosh HD (if it doesnt exist already)
+- Within `htdocs` create a folder called `brand-guidelines`
+
+Now you're ready to go!! Proceed to the [Start a new guidelines] section
 
 # Structure / Organization
 You only need to edit the "src" folder. This stands for "source".  The structure is:
 ```
-bin/
+app/
 brand-files/
 guidelines/
+index.jade
 ```
 There are the folders: 
-- *bin* – mostly ignore this, unless you're changing the guidelines design & functionality
+- *app* – mostly ignore this, unless you're changing the guidelines design & functionality
 - *brand-files* – this is where all the deliverables are stored - logos, font files, packages, email signatures, etc
 - *guidelines* – this is the content of the guidelines page.  This allows you to write information about the deliverables and add photos, sample content, etc
+- *index.jade* – this is where you set the client branding variables, change any navigation, add/remove/change the order of page sections
 
 ## Create an Email signautre
 1. Upload logo to a permanent image host ([imgur](imgur.com) or [postimg.org](postimg.org))
