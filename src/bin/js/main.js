@@ -245,7 +245,7 @@ var scrollspy = (function(){
   // Cached jQuery selectors
   // Variables used throughout the module 
   //
-  var contentBlocksClass  = 'container';
+  var contentBlocksClass  = 'guideline-wrapper';
   var contentSections     = [];
   var isAnimating         = false;
   var menuID              = 'main-nav';

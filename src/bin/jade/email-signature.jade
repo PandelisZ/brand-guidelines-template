@@ -17,8 +17,12 @@ table#sig(width='#{signature_width}', cellspacing='0', cellpadding='0', border-s
           td(style='#{font_styles};padding-bottom: 7px;')
             b(style='font-family:#{font_stack};font-size:#{font_size};color:#{text_color}')
               | #{person_name}
-            br
-            | #{person_title}
+            if person_title
+              br
+              | #{person_title}
+            if comapny_name
+              br
+              | #{company_name}
             br
             |         
             a(style='#{font_styles};padding-bottom: 7px;text-decoration:none;', href='tel:#{phone_number_tel}') #{phone_number}

@@ -4,12 +4,14 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync'),
 
     // Other plugins
+    plumber     = require('gulp-plumber'),
     rimraf      = require('rimraf'),
     es          = require('event-stream'),
     sass        = require('gulp-sass'),
     jade        = require('gulp-jade'),
     sourcemaps  = require('gulp-sourcemaps'),
-    minify      = require('gulp-minify-css'),
+    minifyCss   = require('gulp-minify-css'),
+    rename      = require('gulp-rename'),
     uglify      = require('gulp-uglify'),
     fs          = require('fs.extra');
 
@@ -30,15 +32,19 @@ gulp.task('serve', function() {
 // SASS compiling & reloading
 gulp.task('sass', function() {
     gulp.src('./src/bin/scss/main.scss')
+      .pipe(plumber())
       .pipe(sourcemaps.init())
-        .pipe(sass({
-          errLogToConsole: true
-        }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/css/'))
-        .pipe(browserSync.reload({
-          stream: true
-        }));
+      .pipe(sass({
+        errLogToConsole: true
+      }))
+      .pipe(gulp.dest('./dist/css/'))
+      .pipe(minifyCss({compatibility: 'ie8'}))
+      .pipe(sourcemaps.write())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest('./dist/css/'))
+      .pipe(browserSync.reload({
+        stream: true
+      }));
 });
 
 //
@@ -73,11 +79,7 @@ gulp.task('create-email-signature', function() {
 // Move Brand files into dist
 //
 gulp.task('move-brand-files', function(){
-  fs.rmrf('./dist/brand-files', function (err) {
-    if (err) {
-      console.error(err);
-    }
-  });
+  rimraf('./dist/brand-files', cb);
   fs.copyRecursive('./src/brand-files', './dist/brand-files', function (err) {
     if (err) {
       throw err;
@@ -98,7 +100,7 @@ gulp.task('remove', function (cb) {
 //
 gulp.task('minify', ['sass'], function() {
   return gulp.src('./dist/css/*.css')
-    .pipe(minify({
+    .pipe(minifyCSS({
       keepSpecialComments: 0
     }))
     .pipe(gulp.dest('./dist/css'));
@@ -110,7 +112,7 @@ gulp.task('minify', ['sass'], function() {
 //
 gulp.task('scripts', function() {
     return gulp.src('./src/bin/js/*.js')
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
         .pipe(browserSync.reload({
           stream: true,
@@ -132,7 +134,7 @@ gulp.task('watch-js', function() {
 //
 // Default functionality includes server with browser sync and watching
 //
-gulp.task('default', ['create-email-signature', 'move-brand-files', 'sass', 'scripts', 'jade', 'serve'], function(){
+gulp.task('default', ['remove','sass', 'scripts', 'jade', 'create-email-signature', 'move-brand-files', 'serve'], function(){
   gulp.watch(['./src/index.jade', './src/guidelines/*.jade', './src/bin/jade/*.jade'], ['jade']);
   gulp.watch('./src/bin/scss/**/*.scss', ['sass']);
   gulp.watch('./src/brand-files/email-signature/email-signature.jade', ['create-email-signature']);

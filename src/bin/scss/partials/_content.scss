@@ -3,6 +3,62 @@
 	CONTENT (scss/partials/_content.scss)
 ==========================================================================
 */
+
+.swatch {
+  width: 30%;
+  float: left;
+  &:after {
+    display: block;
+    content: '';
+    padding-bottom: 100%;
+  }
+}
+
+.swatch-details {
+  margin-left: 26%;
+  margin-top: 0;
+  list-style: none;
+}
+
+h5 {
+  margin-top: 0;
+}
+
+.download-link {
+  font-size: 75%;
+  display: block;
+  line-height: 1.4;
+  &:first-child {
+    padding-top: .5rem;
+  }
+}
+
+.top {
+  padding: 20px 10px;
+  display: inline-block;
+  position: absolute;
+  top: 38px; right: 5.8%;
+
+  color: $black-20;
+  font-family: Consolas, monaco, monospace;
+  font-size: $large;
+  line-height: 0;
+  
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  @include media-query(mobile) {
+    top: -1px; right: 0px;
+  }
+
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+}
 section {
   @include span(95%);
   max-width: 1000px;
@@ -23,32 +79,7 @@ section {
     }
   }
 
-  .top {
-    padding: 20px 10px;
-    display: inline-block;
-    position: absolute;
-    top: 38px; right: 5.8%;
-
-    color: $black-20;
-    font-family: Consolas, monaco, monospace;
-    font-size: $large;
-    line-height: 0;
-    
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-
-    @include media-query(mobile) {
-      top: -1px; right: 0px;
-    }
-
-    &:hover {
-      background: $black;
-      color: $white;
-    }
-  }
+  
 
   h3,
   p,

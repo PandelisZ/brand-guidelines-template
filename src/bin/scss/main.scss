@@ -2,9 +2,12 @@
 // http://thesassway.com/beginner/how-to-structure-a-sass-project
 
 @import "vendor/susy/susy";
+@import "responsive-grid/grid";
 
 // Modules, Variables & Normalize.css
 @import "partials/base"; // Base HTML + loading variables, mixins, colors
+
+@import "guidelines-layout/guidelines-layout";
 
 // Partials 
 @import "partials/typography"; // Universal font styles and @font-face declarations

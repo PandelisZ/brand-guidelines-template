@@ -1,64 +1,62 @@
 //- Single column body content tamplate
 
-section.container#color
-  h3 Color Palette
-  p
-    | There are 3 colors used in the primary USRBC brand. Based on the medium in which the logo will be presented, these colors will change.
-  .group
-    section.figure--description
-      h5 Blue
-    section.figure
-      .values.clearfix
-        .swatch(style='background: #0536BF;')
-        ul
-          li
-            b Pantone:
-            |  2736 C
-          li
-            b CMYK:
-            |  97 95 0 0
-          li
-            b RGB:
-            |  4 54 191
-          li
-            b Hex:
-            |  #0536BF
-    .clearfix
-  .group
-    section.figure--description
+.guideline-wrapper#color-palette
+  .guideline-section
+    .col-sm-12 
+      h3 Color Palette
+      p There are 3 colors used in the primary #{clientName} brand. Based on the medium in which the logo will be presented, these colors will change.
+  .guideline-section
+    .col-sm-5
       h5 Red
-    section.figure
-      .values.clearfix
-        .swatch(style='background: #ED1C24;')
-        ul
-          li
-            b Pantone:
-            |  185 C
-          li
-            b CMYK:
-            |  0 93 79 0
-          li
-            b RGB:
-            |  237 28 36
-          li
-            b Hex:
-            |  #ED1C24
-    .clearfix
-  .group
-    section.figure--description
+    .col-sm-7
+      .swatch(style='background: #EB4147;')
+      ul.swatch-details
+        li
+          b Pantone:
+          |  185 C
+        li
+          b CMYK:
+          |  0 93 79 0
+        li
+          b RGB:
+          |  237 28 36
+        li
+          b Hex:
+          |  #EB4147
+  .guideline-section
+    .col-sm-5
       h5 Black
-    section.figure
-      .values.clearfix
-        .swatch(style='background: #101820;')
-        ul
-          li
-            b CMYK:
-            |  100 100 100 100
-          li
-            b RGB:
-            |  16 24 32
-          li
-            b Hex:
-            |  #101820
-    .clearfix
-   a.top(href='#top') »
+    .col-sm-7
+      .swatch(style='background: #111111;')
+      ul.swatch-details
+        li
+          b Pantone:
+          |  185 C
+        li
+          b CMYK:
+          |  0 93 79 0
+        li
+          b RGB:
+          |  237 28 36
+        li
+          b Hex:
+          |  #EB4147
+  .guideline-section
+    .col-sm-5
+      h5 Grey
+    .col-sm-7
+      .swatch(style='background: #e5e5e5;')
+      ul.swatch-details
+        li
+          b Pantone:
+          |  185 C
+        li
+          b CMYK:
+          |  0 93 79 0
+        li
+          b RGB:
+          |  237 28 36
+        li
+          b Hex:
+          |  #EB4147
+  a.top(href='#top') »

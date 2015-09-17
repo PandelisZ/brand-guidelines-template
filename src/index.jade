@@ -1,29 +1,35 @@
 extends bin/jade/layout.jade
 
 //- Call variables in your content like this: #{longName} 
-block organizationDetails
-  //- Naming
-  - var longName='U.S. Russia Business Council'
-  - var shortName='USRBC'
-
-  //- Branding Elements
-  - var headerBackgroundColor = '#0536BF'
-  - var linkColor = '#ED1C24'
-  - var linkColorHover = '#0536BF'
+block applyClientBrand
+  - var clientName            = 'Offline Society'  
+  - var headerBackgroundColor = '#EB4147'
+  - var headerTextColor       = '#FFFFFF'
+  - var linkColor             = '#EB4147'
+  - var linkColorHover        = '#e5e5e5 '
   
+//- Edit the file below if you want to change 
+    The navigation of the style guide
 block navigation
-  //- Edit the file below if you want to change 
-      The navigation of the style guide
-  include guidelines/00-navigation.jade
+  nav#main-nav
+    ul
+      li
+        a.nav-link(href='#logo-configuration') Logo Configuration
+      li
+        a.nav-link(href='#color-palette') Color
+      li
+        a.nav-link(href='#typography') Typography
+      li
+        a.nav-link(href='#email-signature') Email Signature
+      li
+        a.nav-link(href='#stationery') Business Card
 
+
+//- If you want to update the content of the guidelines
+    then edit the corresponding file below. 
+    The order they appear below is the order they will
+    show up on the screen.
 block content
-  //- If you want to update the content of the guidelines
-      then edit the corresponding file below. 
-      The order they appear below is the order they will
-      show up on the screen.
-
-  //- Logo
-  include guidelines/01-logo.jade
   //- Configurations
   include guidelines/02-logo-configuration.jade
   //- Color

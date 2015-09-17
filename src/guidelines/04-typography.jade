@@ -1,51 +1,31 @@
 //- Single column body content tamplate
-
-section.container#typography
-  h3 Typography
-  p
-    | The U.S.-Russia Business Council's primary brand font is 
-    strong Helvetica Neue Pro
-    | .  This 1 typeface can be displayed in either the Latin alphabet for English or the Cyrillic alphabet for Russian.  You can purchase this font at 
-    a(href='http://www.myfonts.com/fonts/linotype/helvetica-neue-pro/', target='_blank') MyFonts
-    | .
-  section.images.clearfix
-    .group
-      section.figure--description
-        h5
-          | Helvetica Neue Pro
-          br
-          | 55 Roman
-      section.figure
-        img(src='brand-files/typography/latin-roman.jpg', alt='Helvetica Neue Type Study', width='500', height='162')
-      .clearfix
-  section.images.clearfix
-    .group
-      section.figure--description
-        h5
-          | Helvetica Neue Pro
-          br
-          | 75 Bold
-      section.figure
-        img(src='brand-files/typography/latin-bold.jpg', alt='Proxima Nova Type Study', width='500', height='162')
-      .clearfix
-  section.images.clearfix
-    .group
-      section.figure--description
-        h5
-          | Helvetica Neue Pro Cyrillic
-          br
-          | 55 Roman
-      section.figure
-        img(src='brand-files/typography/cyrillic-roman.jpg', alt='Proxima Nova Type Study', width='500', height='162')
-      .clearfix
-  section.images.clearfix
-    .group
-      section.figure--description
-        h5
-          | Helvetica Neue Pro Cyrillic
-          br
-          | 75 Bold
-      section.figure--description
-        img(src='brand-files/typography/cyrillic-bold.jpg', alt='Proxima Nova Type Study', width='500', height='162')
-      .clearfix
+.guideline-wrapper#typography
+  .guideline-section
+    .col-sm-12
+      h3 Typography
+      p #{clientName}'s primary brand font is Brandon Grotesque. 
+        | You can purchase this font for desktop and web at  
+        a(href='https://www.myfonts.com/fonts/hvdfonts/brandon-grotesque/', target='_blank') MyFonts
+        | . Only use the fonts specificed below.  We reccomend that you purchase italics for each weight
+  .guideline-section
+    .col-sm-5
+      h5 Brandon Grotesque
+        br
+        | Bold
+    .col-sm-7
+      img(src='brand-files/typography/latin-roman.jpg', alt='Helvetica Neue Type Study')
+  .guideline-section
+    .col-sm-5
+      h5 Brandon Grotesque
+        br
+        | Regular
+    .col-sm-7
+      img(src='brand-files/typography/latin-bold.jpg', alt='Proxima Nova Type Study')
+  .guideline-section
+    .col-sm-5
+      h5 Brandon Grotesque
+        br
+        | Light
+    .col-sm-7
+      img(src='brand-files/typography/cyrillic-roman.jpg', alt='Proxima Nova Type Study')
   a.top(href='#top') »
