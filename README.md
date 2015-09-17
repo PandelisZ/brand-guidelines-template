@@ -2,9 +2,9 @@
 1. [About](#about)
 2. [Start a new brand guidelines](#start-a-new-brand-guidelines)
 3. [First time set up](#first-time-set-up-instructions)
-4. [Structure / Organization](#structure--organization)
+4. [Structure & organization](#structure--organization)
 5. [How to Update](#)
-6. [Requirements](#)
+6. [Requirements](#requirements)
 7. [How to deliver](#)
 
 # About
@@ -20,6 +20,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
   cd /htdocs/brand-guidelines
   ```
 ##### Step 1 – Clone this repository
+*Don't forget to change 'client-name-here' to the client's name!!*
    ```
    git clone https://github.com/ripestudios/brand-guidelines-template.git client-name-here
    ```
@@ -55,7 +56,7 @@ Use the Sublime Text package control to add JADE:
 
 Now you're ready to go!! Proceed to the [Start a new guidelines] section
 
-# Structure / Organization
+# Structure & organization
 You only need to edit the "build" folder. This stands for "source".  The structure is:
 ```
 app/
@@ -69,7 +70,15 @@ There are the folders:
 - *guidelines* – this is the content of the guidelines page.  This allows you to write information about the deliverables and add photos, sample content, etc
 - *index.jade* – this is where you set the client branding variables, change any navigation, add/remove/change the order of page sections
 
-## Create an Email signautre
+# How to update
+- Step 1 – Once your guidelines are up & running, open the `build` folder in Sublime
+- Step 2 – Open `index.jade` and update all variables listed under `applyClientBrand`
+- Step 3 – Update the file `brand-files/email-signature/variables.jade` with the default information for this client
+- Step 3 - Start editing content in the `guidelines/` folder based on the exported assets and specific client needs
+
+Happy editing!!
+
+#### Creating the email signature
 1. Upload logo to a permanent image host ([imgur](imgur.com) or [postimg.org](postimg.org))
    - Make sure image is saved @ 2x
    - Record the dimensions, (WxH) you'll need to add it later
@@ -77,14 +86,6 @@ There are the folders:
 2. Find `variables.jade` in the `brand-files/email-signature` folder
 3. Add default name (usually the project decision maker), basic branding info, link the image
 4. Save & you're done!
-
-## Add client name & branding details
-1. Open `src` folder in Sublime
-2. Edit `index.jade` and update all the "organizationDetails" variables
-
-## Add brand files
-
-## Update guidelines
 
 #Requirements
 At the bare mimumum all Brand Guidelines must have:
@@ -95,9 +96,21 @@ At the bare mimumum all Brand Guidelines must have:
 - Email Signature
 
 #How to deliver
-1. Build the project for distrubtion:
-   ```gulp build```
-2. Take the generated directory named `dist` and upload it to Ripeserver via FTP.  The structure should be: http://ripeserver.com/brand/client-name
+Now that you are done with the brand guidelines, its time to launch!!
+
+#### Step 1 – Build the project for distribution
+Go to the directory for this brand guidelines and run
+   ```
+   gulp build
+   ```
+#### Step 2 – Connect to Ripeserver
+Use our FTP credentials in 1password for Ripeserver and login.  Navigate to the `brand` directory within our web files. 
+
+#### Step 3 – Upload the guidelines
+Take the generated directory named `dist` and upload it to the brand folder..  Once its uploaded, rename it based on the client:  The URL structure should be: http://ripeserver.com/brand/client-name
+
+#### Step 4 – Upload to client's server
+If we are designing a website for this client, make sure its uploaded to their server at: http://clientURL/brand/
 
 
 
