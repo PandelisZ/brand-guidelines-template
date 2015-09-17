@@ -80,9 +80,12 @@ fieldset {
 
 input[type=text], textarea, select, input[type=phone]{
 	padding: 10px 10px 9px 10px;
-
+	@include transition(all,300ms);
 	&:focus {
 		outline: 0;
+		border-color: #123;
+		@include transition(all,300ms);
+
 	}
 }
 

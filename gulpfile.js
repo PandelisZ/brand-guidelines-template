@@ -40,6 +40,24 @@ gulp.task('serve', function() {
 });
 
 
+/* ========================================================================= */
+// Watch Assets for changes
+// -------------
+var assetConfig = {
+  path: ['build/brand-files/**/*','build/brand-files/*'],
+  watch: ['build/brand-files/**/*','build/brand-files/*']
+};
+
+gulp.task('watch-assets', function(){
+ return gulp.src(assetConfig.path)
+      .pipe(plumber())
+      .pipe(browserSync.reload({
+        stream: true,
+        once: true
+  }));
+});
+
+
 
 /* ========================================================================= */
 // Style
@@ -84,9 +102,8 @@ gulp.task('optimizeCSS', ['sass'], function() {
     .pipe(gulp.dest('./dist/app/css'));
 });
 
-/* ========================================================================= */
-// JADE
-// -------------
+
+
 
 //
 // Config
@@ -230,5 +247,6 @@ gulp.task('default', ['create-email-signature','sass', 'scripts', 'jade', 'serve
   gulp.watch(styleConfig.watch, ['sass']);
   gulp.watch(scriptConfig.watch, ['scripts']);
   gulp.watch(emailSigConfig.watch, ['create-email-signature']);
+  gulp.watch(assetConfig.watch, ['watch-assets']);
 });
 

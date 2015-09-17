@@ -10,7 +10,8 @@
         and a [PDF](href='brand-files/how-to-add-email-signature.pdf') with instructions for Mac Mail, Gmail, and iOS
   .guideline-section
     .col-sm-5
-      h5 Generate Signature
+      h5 Create a personal signature:
+        small Add your details below to create a personalized email signature
       form(id='generateEmailSig', action='brand-files/email-signature/email-signature.html', method='GET', target='_blank' )
         input(name='name',type='text',placeholder='Your Name')
         input(name='title',type='text',placeholder='Job Title')
@@ -18,7 +19,7 @@
         input(name='phone',type='phone',placeholder='Phone Number')
         input(name='url',type='text',placeholder='Website URL (no http://)')
         input(type='submit',value='Generate Signature')
-
+      a(href='brand-files/email-signature/email-signature.html' target='_blank') View a sample email signature    
     .col-sm-7
       img(src='brand-files/email-signature/email-signature@2x.png', alt='Acceptable Configurations')
   a.top(href='#top') »

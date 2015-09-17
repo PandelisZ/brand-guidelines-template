@@ -371,11 +371,11 @@ a {
     color: #0536BF; }
 
 a, a img, input[type=submit] {
-  -webkit-transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -ms-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out; }
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -ms-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out; }
 
 address {
   font-style: normal; }
@@ -415,9 +415,20 @@ fieldset {
   padding: 0; }
 
 input[type=text], textarea, select, input[type=phone] {
-  padding: 10px 10px 9px 10px; }
+  padding: 10px 10px 9px 10px;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out; }
   input[type=text]:focus, textarea:focus, select:focus, input[type=phone]:focus {
-    outline: 0; }
+    outline: 0;
+    border-color: #123;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out; }
 
 input[type=submit] {
   padding: 10px 25px;
@@ -1292,6 +1303,12 @@ header#pageHeader {
 
 h5 {
   margin-top: 0; }
+  h5 small {
+    display: block;
+    font-size: 1rem;
+    color: #999;
+    line-height: 1.3;
+    margin-top: .5rem; }
 
 .download-link {
   font-size: 75%;
@@ -1337,8 +1354,10 @@ ul {
 h1:first-of-type:first-child, h2:first-of-type:first-child, h3:first-of-type:first-child, h4:first-of-type:first-child, h5:first-of-type:first-child, h6:first-of-type:first-child {
   margin-top: 0; }
 
-#generateEmailSig input {
-  width: 90%; }
+#generateEmailSig {
+  margin-bottom: 1.5rem; }
+  #generateEmailSig input {
+    width: 90%; }
 
 /*
 ==========================================================================

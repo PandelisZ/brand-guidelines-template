@@ -86,9 +86,9 @@ $tiny: 12px;
 //	TRANSITIONS
 //
 @mixin transition($type,$length) {
-	-webkit-transition: $type $length ease-in-out;
-	-moz-transition: $type $length ease-in-out;
-	-ms-transition: $type $length ease-in-out;
-	-o-transition: $type $length ease-in-out;
-	transition: $type $length ease-in-out;
+	-webkit-transition: $type $length ease-out;
+	-moz-transition: $type $length ease-out;
+	-ms-transition: $type $length ease-out;
+	-o-transition: $type $length ease-out;
+	transition: $type $length ease-out;
 }
