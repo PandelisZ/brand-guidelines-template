@@ -32,6 +32,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
    ```
    gulp
    ```
+   A successful `gulp` command will result in a browser window opening automatically with a page that looks (like this)[http://ripeserver.com/brand/demo/]
    
 # First time set-up instructions 
 
