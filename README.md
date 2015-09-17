@@ -1,6 +1,6 @@
 # Brand Guidelines template
-1. [About](#)
-2. [Installation Instructions](#)
+1. [About](#about)
+2. [Start a new brand guidelines](#)
 3. [Structure / Organization](#)
 4. [How to Update](#)
 5. [Requirements](#)
@@ -9,7 +9,7 @@
 # About
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
 
-# Start a new guidelines page:
+# Start a new brand guidelines:
 *If this is your first time creating a brand guidelines doc, please see 'First Time set up instructions'* 
 
 
