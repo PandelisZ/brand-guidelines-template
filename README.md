@@ -11,7 +11,7 @@
 This is the template for a brand guidelines document.  Brand guidelines are the way we deliver all brand projects to the client. [View a demo](http://ripeserver.com/brand/usrbc/) of a completed brand guidelines page.  
 
 # Start a new brand guidelines:
-*If this is your first time creating a brand guidelines doc, please see 'First Time set up instructions'* 
+*If this is your first time creating a brand guidelines doc, please see '[First Time set up instructions](#first-time-set-up-instructions)'* 
 
 
 ##### Step 0 – Navigate to your working directory
@@ -96,7 +96,7 @@ At the bare mimumum all Brand Guidelines must have:
 - Email Signature
 
 #How to deliver
-Now that you are done with the brand guidelines, its time to launch!!
+Now that you are done creating a brand's guidelines, its time to launch!!
 
 #### Step 1 – Build the project for distribution
 In the command line, `cd` to the directory for this brand guidelines and run
