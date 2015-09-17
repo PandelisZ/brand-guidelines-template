@@ -32,7 +32,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
    ```
    gulp
    ```
-   A successful `gulp` command will result in a browser window opening automatically with a page that looks (like this)[http://ripeserver.com/brand/demo/]
+   A successful `gulp` command will result in a browser window opening automatically with a page that looks [like this](http://ripeserver.com/brand/demo/)
    
 # First time set-up instructions 
 
@@ -42,7 +42,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
 - [Sublime Text Package Control](https://packagecontrol.io/installation)
 - [Node](https://nodejs.org/en/)
 
-#### Step 2 – Install JADE syntax highlighting
+#### Step 2 – Install Jade syntax highlighting
 Use the Sublime Text package control to add JADE:
 - Open Sublime Text
 - Call package manager: `cmd + shift + p`
@@ -51,11 +51,14 @@ Use the Sublime Text package control to add JADE:
 - Confirm by saving a new document as a `.jade` file and check that the bottom right corner says "Jade" and not HTML or Plain Text
 
 #### Step 3 – Create a folder to store all brand guidlines
-- Navigate to your harddrive and create a folder at your root directory.  On a Mac, open the Finder and select *Go -> Home* from your system tray menu or press `Sht + Cmd + H`
-- Create a folder `htdocs` in your Macintosh HD (if it doesnt exist already)
-- Within `htdocs` create a folder called `brand-guidelines`
+Open iTerm and type each the following commands:
+```
+sudo mkdir /htdocs
+sudo mkdri /htdocs/brand-guidelines
+cd /htdocs/brand-guidelines
+```
 
-Now you're ready to go!! Proceed to the [Start a new guidelines] section
+Now you're ready to go!! Proceed to the [Start a new brand guidelines](#start-a-new-brand-guidelines) section
 
 # Structure & organization
 You only need to edit the "build" folder. This stands for "source".  The structure is:
