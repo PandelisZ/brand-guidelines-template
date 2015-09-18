@@ -26,7 +26,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
    ```
    git clone https://github.com/ripestudios/brand-guidelines-template.git client-name-here
    ```
-**Once you've cloned the repository, make sure you delete the `.git` folder and then commit & push to the brand-guidelines repo**  
+*Once you've cloned the repository, make sure you delete the `.git` folder and then commit & push to the brand-guidelines repo*  
 ##### Step 2 – Install dependencies
    ```
    sudo npm install
