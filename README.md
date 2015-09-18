@@ -14,7 +14,9 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
 *If this is your first time creating a brand guidelines doc, please see '[First Time set up instructions](#first-time-set-up-instructions)'* 
 
 
-##### Step 0 – Navigate to your working directory
+##### Step 0 – Navigate to your local brand-guidelines folder
+*This folder should be your local clone of the brand-guidelines repo which holds all the completed guidelines*
+
  Open iTerm and navigate to the directory where you want to store the guidelines, usually like this 
   ``` 
   cd /htdocs/brand-guidelines
@@ -24,6 +26,7 @@ This is the template for a brand guidelines document.  Brand guidelines are the 
    ```
    git clone https://github.com/ripestudios/brand-guidelines-template.git client-name-here
    ```
+**Once you've cloned the repository, make sure you delete the `.git` folder and then commit & push to the brand-guidelines repo**  
 ##### Step 2 – Install dependencies
    ```
    sudo npm install
