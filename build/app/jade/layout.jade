@@ -64,6 +64,10 @@ html.no-js
       ::selection {
       background-color: #{linkColor}
       }
+      input[type=text]:focus, textarea:focus, select:focus, input[type=phone]:focus {
+      border-style: solid;
+      border-color: #{linkColor};
+      }
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js')
   body
