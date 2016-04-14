@@ -263,7 +263,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -522,8 +523,7 @@ textarea {
   margin-left: auto;
   padding-left: 7.5%;
   padding-right: 7.5%; }
-  .guideline-wrapper:before,
-  .guideline-wrapper:after {
+  .guideline-wrapper:before, .guideline-wrapper:after {
     content: " ";
     display: table; }
   .guideline-wrapper:after {
@@ -546,8 +546,7 @@ textarea {
   padding-top: 1.5rem;
   margin-left: -0.75rem;
   margin-right: -0.75rem; }
-  .guideline-section:before,
-  .guideline-section:after {
+  .guideline-section:before, .guideline-section:after {
     content: " ";
     display: table; }
   .guideline-section:after {

@@ -3,3 +3,4 @@ node_modules/
 dist/
 build/brand-files/email-signature/email-signature.html
 build/index.html
+buld/app/css/main.css
